@@ -1,0 +1,69 @@
+.messagesArea {
+  flex: 1;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  overflow-y: auto;
+}
+
+.dateDivider {
+  text-align: center;
+  color: #c0c4cb;
+  font-size: 12px;
+  margin: 10px 0;
+  position: relative;
+}
+
+.messageRow {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  max-width: 75%;
+}
+
+.myMessageRow {
+  align-self: flex-end;
+}
+
+.outgoingMessage {
+  background: linear-gradient(90deg, #ff007a 0%, #7f00ff 100%);
+  color: #ffffff;
+  padding: 12px 16px;
+  border-radius: 14px 14px 4px 14px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.msgAvatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.msgContentWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.incomingMessage {
+  background-color: #0e111e;
+  border: 1px solid #303454;
+  color: #ffffff;
+  padding: 12px 16px;
+  border-radius: 14px 14px 14px 4px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.msgTime {
+  font-size: 11px;
+  color: #c0c4cb;
+  margin-top: 2px;
+}
+
+.myMessageRow .msgTime {
+  text-align: right;
+}

@@ -1,0 +1,69 @@
+:root {
+  --font-main: 'Inter', sans-serif;
+  --bg-main: #09090E;         
+  --bg-card: #0E111E;          
+  --bg-input: #121626;         
+
+  --text-primary: #FFFFFF;     
+  --text-secondary: #c0c4cb;  
+  --border-color: #303454;    
+  --blue-verified: #00A3FF;   
+
+  --gradient-primary: linear-gradient(90deg, #eb3a8f 0%, #7F00FF 100%); /* Кнопки и Home */
+  --gradient-secondary: linear-gradient(90deg, #E040FB 0%, #7C4DFF 100%); /* Блок рефералов */
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  font-family: var(--font-main);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.app-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0 auto;
+  display: grid;
+  grid-template-areas:
+    "h h"
+    "n c";
+  grid-template-rows: 100px 1fr;
+  grid-template-columns: 350px 10fr;
+}
+
+.app-wrapper-content {
+  grid-area: c;
+  background-color: #09090e;
+  border: 1px solid var(--border-color); 
+  min-height: 100vh;
+}
+
+/* Кнопки (Create Post, Follow) */
+.btn-gradient {
+  background: var(--gradient-primary);
+  color: var(--text-primary);
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+.btn-secondary {
+  background: #FFF;
+  color: #000;
+  border: none;
+  border-radius: 20px; /* Овальные кнопки Follow */
+  font-weight: 600;
+  padding: 6px 16px;
+  font-size: 12px;
+  cursor: pointer;
+}
+

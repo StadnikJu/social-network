@@ -1,0 +1,64 @@
+.header {
+  grid-area: h;
+  background-color: #161b32;
+  color: white;
+  border: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  padding: 24px 24px 24px 62px;
+}
+
+.gradientItem {
+  font-size: 32px;
+  font-weight: 800;
+  font-family: var(--font-main);
+  background: var(--gradient-primary);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.searchWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 450px;
+  margin-left: 130px;
+}
+
+.searchInput {
+  width: 100%;
+  background-color: var(--bg-input);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  font-size: 16px;
+  font-family: var(--font-main);
+  padding: 18px 16px 18px 42px;
+  border-radius: 10px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.searchInput:focus {
+  border: 2px solid transparent;
+  background-image: linear-gradient(#1e2540, #1e2540), var(--gradient-primary);
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+}
+
+.searchInput::placeholder {
+  color: var(--text-secondary);
+  opacity: 0.7;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 16px;
+  font-size: 14px;
+  color: var(--text-secondary);
+  pointer-events: none;
+  user-select: none;
+}

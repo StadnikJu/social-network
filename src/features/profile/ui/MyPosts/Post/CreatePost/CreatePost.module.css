@@ -1,0 +1,81 @@
+.createCard {
+  background-color: #0e111e;
+  border: 1px solid #303454;
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+
+/* // delete? */
+.inputRow {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.userAvatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.textarea {
+  width: 100%;
+  background: transparent;
+  border: none;
+  color: #FFFFFF;
+  font-size: 16px;
+  font-family: sans-serif;
+  resize: none;
+  height: 60px;
+  outline: none;
+}
+
+.textarea::placeholder {
+  color: #c0c4cb;
+  opacity: 0.6;
+}
+
+
+
+.formFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  border-top: 1px solid #303454;
+  padding-top: 14px;
+}
+
+.imageInput {
+  flex: 1;
+  background-color: #1e2540;
+  border: 1px solid #303454;
+  border-radius: 8px;
+  padding: 10px 14px;
+  color: #FFFFFF;
+  font-size: 14px;
+  outline: none;
+}
+
+.submitBtn {
+  background: linear-gradient(90deg, #FF007A 0%, #7F00FF 100%);
+  color: #FFFFFF;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 12px 24px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.submitBtn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(255, 0, 122, 0.4);
+}

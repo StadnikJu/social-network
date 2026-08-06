@@ -1,0 +1,5 @@
+.chatWindow {
+  background-color: #09090e;
+  display: flex;
+  flex-direction: column;
+}

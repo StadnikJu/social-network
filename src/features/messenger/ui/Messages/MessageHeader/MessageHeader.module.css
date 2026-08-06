@@ -1,0 +1,26 @@
+.activeChatHeader {
+  background-color: #0e111e;
+  border-bottom: 1px solid #303454;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.activeUserName {
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.userStatus {
+  font-size: 12px;
+  color: #00A3FF; 
+}
+
+.userAvatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+}

@@ -1,0 +1,36 @@
+.inputRow {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.submitBtn {
+  background: linear-gradient(90deg, #FF007A 0%, #7F00FF 100%);
+  color: #FFFFFF;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 12px 24px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.userAvatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.textarea {
+  width: 100%;
+  background: transparent;
+  border: none;
+  color: #FFFFFF;
+  font-size: 16px;
+  font-family: sans-serif;
+  resize: none;
+  height: 60px;
+  outline: none;
+}

@@ -1,14 +1,16 @@
 import "./App.css";
-import { Profile } from "./components/Profile";
-import { Header } from "./components/Header";
-import { NavBar } from "./components/NavBar";
+
+import { Header, NavBar, Routing } from "@/common/components";
+
 
 const App = () => {
   return (
     <div className="app-wrapper">
       <Header />
       <NavBar />
-      <Profile />
+      <div className="app-wrapper-content">
+        <Routing />
+      </div>
     </div>
   );
 };

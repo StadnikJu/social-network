@@ -1,0 +1,9 @@
+.feedContainer {
+  width: 100%;
+}
+
+.postsList {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}

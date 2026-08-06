@@ -1,0 +1,120 @@
+.postCard {
+  background-color: #0e111e; 
+  border: 1px solid #303454;
+  border-radius: 16px;   
+  padding: 24px;
+  width: 100%;
+}
+
+.submitBtn {
+  background: linear-gradient(90deg, #FF007A 0%, #7F00FF 100%);
+  color: #FFFFFF;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 12px 24px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.postHeader {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.avatarWrapper {
+  position: relative;
+  width: 52px;
+  height: 52px;
+}
+
+.avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;       
+  object-fit: cover;
+  border: 2px solid #FF007A; 
+}
+
+.authorInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.authorName {
+  font-size: 16px;
+  font-weight: 600;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.verified {
+  color: #00A3FF;
+  font-size: 14px;
+}
+
+.postTime {
+  font-size: 13px;
+  color: #c0c4cb;
+}
+
+.postText {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #e2e8f0;            
+  margin-bottom: 18px;
+}
+
+.imageContainer {
+  width: 100%;
+  border-radius: 14px;
+  overflow: hidden;       
+  margin-bottom: 20px;
+  border: 1px solid #303454;
+}
+
+.postImage {
+  width: 100%;
+  height: auto;
+  max-height: 450px;
+  object-fit: cover;     
+  display: block;
+}
+
+.postFooter {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  border-top: 1px solid #303454; 
+  padding-top: 16px;
+}
+
+.actionButton {
+  background: transparent;
+  border: none;
+  color: #c0c4cb;
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.actionButton:hover {
+  background-color: #1e2540;
+  color: #FFFFFF;
+}
+
+.actionButton:hover {
+  color: #FF007A;
+}
