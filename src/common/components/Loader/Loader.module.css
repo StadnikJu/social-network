@@ -1,0 +1,40 @@
+.loader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    overflow: hidden;
+    z-index: 1000;
+    background: rgba(193, 79, 211, 0.25);
+    box-shadow: 0 0 8px rgba(193, 79, 211, 0.25);
+}
+
+.loader::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -30%;
+  width: 30%;
+  height: 100%;
+  background: #ed3ad5;
+  box-shadow:
+    0 0 6px rgba(237, 58, 219, 0.8),
+    0 0 12px rgba(237, 58, 219, 0.8);
+
+  animation: loading 1.9s infinite ease-in-out;
+}
+
+@keyframes loading {
+  0% {
+    left: -30%;
+  }
+
+  50% {
+    left: 100%;
+  }
+
+  100% {
+    left: 100%;
+  }
+}

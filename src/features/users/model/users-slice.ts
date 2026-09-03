@@ -2,6 +2,7 @@ import { User, UsersResponse } from "@/common/types/users";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { usersApi } from "../api/usersApi";
 import { createAppSlice } from "@/common/utils";
+import { setAppStatusAC } from "@/app/model/appSlice";
 
 type UsersState = {
   items: User[];
@@ -47,12 +48,15 @@ export const usersSlice = createAppSlice({
       state.currentPage = action.payload;
     }),
     fetchUsersTC: create.asyncThunk(
-      async (args: { currentPage: number; pageSize: number }, thunkAPI) => {
+      async (args: { currentPage: number; pageSize: number }, { dispatch, rejectWithValue }) => {
         try {
+          dispatch(setAppStatusAC({ status: 'loading' }));
           const res = await usersApi.getUsers(args.currentPage, args.pageSize);
+           dispatch(setAppStatusAC({ status: 'succeeded' }));
           return res.data;
         } catch (error) {
-          return thunkAPI.rejectWithValue(null);
+          dispatch(setAppStatusAC({ status: 'failed' }))
+          return rejectWithValue(null);
         }
       },
       {

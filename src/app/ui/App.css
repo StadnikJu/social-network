@@ -44,6 +44,7 @@ body {
 
 .app-wrapper-content {
   height: 100%; 
+  position: relative;
   overflow: auto;
   display: flex; 
   flex: 1;
