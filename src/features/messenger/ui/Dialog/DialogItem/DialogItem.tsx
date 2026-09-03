@@ -1,15 +1,8 @@
 import { NavLink } from "react-router-dom";
 import s from "./DialogItem.module.css";
+import { Dialog } from "@/common/types/messenger";
 
-export type Props = {
-  id: number;
-  name: string;
-  time: string;
-  message: string;
-  img: string;
-};
-
-export const DialogItem = ({ name, time, message, img, id }: Props) => {
+export const DialogItem = ({ name, time, message, img, id }: Dialog) => {
   const path = `message/${id}`;
 
   return (

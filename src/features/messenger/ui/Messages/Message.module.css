@@ -1,5 +1,6 @@
 .messagesArea {
-  flex: 1;
+  width: 100%;
+  max-width: 100%;
   padding: 24px;
   display: flex;
   flex-direction: column;
@@ -7,19 +8,12 @@
   overflow-y: auto;
 }
 
-.dateDivider {
-  text-align: center;
-  color: #c0c4cb;
-  font-size: 12px;
-  margin: 10px 0;
-  position: relative;
-}
-
 .messageRow {
   display: flex;
   align-items: flex-end;
   gap: 10px;
-  max-width: 75%;
+  width: fit-content;
+  max-width: min(75%, 720px);
 }
 
 .myMessageRow {

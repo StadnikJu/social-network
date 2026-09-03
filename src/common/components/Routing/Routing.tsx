@@ -3,7 +3,8 @@ import { Profile } from '@/features/profile/ui/Profile';
 import { Dialogs } from "@/features/messenger/ui/Dialogs";
 import { News } from "@/features/News";
 import { Music } from "@/features/Music";
-import { Settings } from "../Settings";
+import { Settings } from "../../../features/Settings";
+import { UsersPage } from "@/features/users/ui";
 
 export const Path = {
   Profile: "/profile",
@@ -11,6 +12,7 @@ export const Path = {
   DialogsDetail: "/messages/:id",
   News: "/news",
   Music: "/music",
+  Users: "/users",
   Settings: "/settings",
 } as const;
 
@@ -21,6 +23,7 @@ export const Routing = () => (
     <Route path={Path.DialogsDetail} element={<Dialogs />} />
     <Route path={Path.News} element={<News />} />
     <Route path={Path.Music} element={<Music />} />
+    <Route path={Path.Users} element={<UsersPage />} /> 
     <Route path={Path.Settings} element={<Settings />} /> 
   </Routes>
 );

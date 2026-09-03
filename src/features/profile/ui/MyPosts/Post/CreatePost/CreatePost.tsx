@@ -1,10 +1,10 @@
 import { FormEvent, useState } from "react";
-import s from "./CreatePost.module.css";
 import { PostHeader } from "./PostHeader/PostHeader";
 import { useAppDispatch } from "@/common/hooks";
-import { addPostAC } from "@/features/profile/model/ProfileSlice";
-import { Post } from "@/common/types";
+import { addPostAC } from "@/features/profile/model/profileSlice";
+import { Post } from "@/common/types/post";
 import { Button } from "@/common/components";
+import s from "./CreatePost.module.css";
 
 export const CreatePost = () => {
   const [inputText, setInputText] = useState("");
@@ -23,8 +23,7 @@ export const CreatePost = () => {
       time: "Just now",
       text: inputText,
       image: inputImage.trim() || "",
-      likesCount: 0
-      ,
+      likesCount: 0,
     };
 
     dispatch(addPostAC(newPost));

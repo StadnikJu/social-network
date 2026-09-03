@@ -1,34 +1,17 @@
+import { useAppSelector } from "@/common/hooks";
 import { DialogItem } from "../DialogItem/DialogItem";
 import s from "./DialogTitle.module.css";
+import { selectDialogs } from "@/features/messenger/model/messengerSlice";
 
 export const DialogTitle = () => {
-  const dialogsData = [
-    {
-      id: 1,
-      name: "Yuliia Stadnyk",
-      time: "10m ago",
-      message: "Thanks for subscribing! 💕",
-      img: "https://unsplash.com",
-    },
-    {
-      id: 2,
-      name: "Sophia Chen",
-      time: "2m ago",
-      message: "Check out my latest artwork!",
-      img: "https://unsplash.com",
-    },
-  ];
+  const dialogsData = useAppSelector(selectDialogs);
 
   return (
     <aside className={s.chatsSidebar}>
       <h2 className={s.sectionTitle}>Messages</h2>
       <div className={s.searchWrapper}>
         <span className={s.searchIcon}>🔍</span>
-        <input
-          type="text"
-          className={s.searchInput}
-          placeholder="Search messages..."
-        />
+        <input type="text" className={s.searchInput} placeholder="Search messages..." />
       </div>
       <div className={s.chatsList}>
         {dialogsData.map((e) => {

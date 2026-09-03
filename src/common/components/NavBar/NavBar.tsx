@@ -16,6 +16,9 @@ export const NavBar = () => {
       <NavLink to="/music" className={s.menuItem}>
         <span className={s.menuIcon}>🎵</span> Music
       </NavLink>
+      <NavLink to="/users" className={s.menuItem}>
+        <span className={s.menuIcon}></span> Users
+      </NavLink>
       <NavLink to="/settings" className={s.menuItem}>
         <span className={s.menuIcon}>⚙️</span> Settings
       </NavLink>

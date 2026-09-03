@@ -9,12 +9,7 @@ export const PostHeader = ({inputText, setInputText}: PostHeaderProps) => {
   return (
     <div className={s.inputRow}>
       <p>Yuliia</p>
-      <img
-        src="https://unsplash.com"
-        alt="Your Avatar"
-        className={s.userAvatar}
-      />
-      
+      <img src="https://unsplash.com" alt="Your Avatar" className={s.userAvatar} />
       <textarea
         placeholder="What's on your mind?"
         value={inputText}

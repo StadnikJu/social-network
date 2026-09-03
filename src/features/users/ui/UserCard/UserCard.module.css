@@ -1,0 +1,138 @@
+@media (max-width: 1100px) {
+  .usersGridWrapper {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 36px;
+    gap: 28px;
+  }
+}
+
+@media (max-width: 640px) {
+  .usersGridWrapper {
+    grid-template-columns: 1fr;
+    padding: 24px;
+    gap: 20px;
+  }
+}
+
+.cardWrapper {
+  width: 100%;
+  max-width: 360px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  overflow: visible; /* avatar overflows header */
+  display: flex;
+  flex-direction: column;
+  position: relative; /* stacking context for avatar */
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  min-width: 0; /* allow card to shrink inside grid */
+}
+
+/* ensure each card fills the grid cell height and has a consistent minimum height */
+.cardWrapper {
+  height: 420px;
+  min-height: 300px;
+}
+
+.cardWrapper:hover,
+.cardWrapper:focus-within {
+  border-color: #ef4fcc;
+  box-shadow: 0 8px 24px rgba(99, 102, 241, 0.08);
+}
+
+.headerImages {
+  width: 100%;
+  height: 160px;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #1b1f38 0%, #0e111e 100%);
+}
+
+.coverImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.avatarContainer {
+  position: absolute;
+  top: calc(160px - 40px); /* overlap the bottom of header by 40px */
+  left: 20px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: var(--bg-card);
+  padding: 4px;
+  box-sizing: border-box;
+  z-index: 3;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+}
+
+.avatarImage {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.cardContent {
+  padding: 24px 20px 32px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 56px; /* make room for avatar overlap */
+}
+
+/* allow content to grow to push footer to bottom */
+.cardContent {
+  flex: 1 1 auto;
+}
+
+.creatorName {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.verifiedBadge {
+  font-size: 14px;
+}
+
+.creatorUsername {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.creatorBio {
+  font-size: 14px;
+  color: var(--text-primary);
+  line-height: 1.4;
+}
+
+.statsRow {
+  display: flex;
+  gap: 16px;
+  color: var(--text-secondary);
+  font-size: 13px;
+}
+
+.footerRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 8px;
+}
+
+/* pin footer to the bottom when card height is larger */
+.footerRow {
+  margin-top: auto;
+}
+
+.statItem strong {
+  color: var(--text-primary);
+  font-weight: 700;
+}

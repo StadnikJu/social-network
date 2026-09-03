@@ -1,39 +1,41 @@
-import { Post } from "@/common/types";
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { Post } from "@/common/types/post";
+import { createSlice } from "@reduxjs/toolkit";
 
 type PostsState = {
   posts: Post[];
 };
 
-const initialState: PostsState = {
-  posts: [],
-};
-
-const postsSlice = createSlice({
+export const postsSlice = createSlice({
   name: "posts",
-  initialState,
+  initialState: {posts: []} as PostsState,
+  selectors: {
+    selectPosts: (state) => state.posts,
+  },
 
-  reducers: {
-    addPostAC(state, action: PayloadAction<Post>) {
-      state.posts.unshift(action.payload);
-    },
-    likePostAC(state, action: PayloadAction<number>) {
-      const post = state.posts.find((p) => p.id === action.payload);
-
+  reducers: (create) => {
+    return {
+      addPostAC: create.reducer<Post>((state, action) => {
+        state.posts.unshift(action.payload);
+      }),
+      likePostAC: create.reducer<number>((state, action) => {
+              const post = state.posts.find((p) => p.id === action.payload);
       if (post) {
         post.likesCount += 1;
       }
-    },
-    deletePostAC(state, action: PayloadAction<number>) {
-      const post = state.posts.findIndex((p) => p.id === action.payload);
-
+      }),
+      deletePostAC: create.reducer<number>((state, action) => {
+              const post = state.posts.findIndex((p) => p.id === action.payload);
       if (post !== -1) {
         state.posts.splice(post, 1);
       }
-    },
+      })
+    };
+  },
+  extraReducers: (builder) => {
+    builder;
   },
 });
 
 export const { addPostAC, likePostAC, deletePostAC } = postsSlice.actions;
-
+export const { selectPosts } = postsSlice .selectors;
 export const postsReducer = postsSlice.reducer;

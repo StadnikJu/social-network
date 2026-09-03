@@ -1,15 +1,19 @@
-import { combineReducers, configureStore } from "@reduxjs/toolkit";
-import { messengerReducer } from "../features/messenger/model/messengerSlice";
-import { postsReducer } from "../features/profile/model/ProfileSlice";
-
-const rootReducer = combineReducers({
-  messengerPage: messengerReducer,
-  postsPage: postsReducer
-});
+import { postsSlice } from "@/features/profile/model/profileSlice";
+import { usersSlice } from "@/features/users/model/users-slice";
+import { messengerSlice } from "@/features/messenger/model/messengerSlice"
+import { configureStore } from "@reduxjs/toolkit";
+import { setupListeners } from "@reduxjs/toolkit/query";
 
 export const store = configureStore({
-  reducer: rootReducer,
+  reducer: {
+    [messengerSlice.name]: messengerSlice.reducer,
+    [postsSlice.reducerPath]: postsSlice.reducer,
+    [usersSlice.name]: usersSlice.reducer,
+  },
+  devTools: import.meta.env.MODE !== "production",
 });
+
+setupListeners(store.dispatch);
 
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;

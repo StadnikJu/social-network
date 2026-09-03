@@ -1,15 +1,14 @@
 import { Button } from "@/common/components";
-import { Post as PostType } from "@/common/types";
+import { Post as PostType } from "@/common/types/post";
 import s from "./Post.module.css";
 import { useAppDispatch } from "@/common/hooks";
-import { deletePostAC, likePostAC } from "@/features/profile/model/ProfileSlice";
+import { deletePostAC, likePostAC } from "@/features/profile/model/profileSlice";
 
 export type Props = {
   data: PostType
 }
 
 export const Post = ({ data }: Props) => {
-
   const dispatch = useAppDispatch();
 
   return (
@@ -35,7 +34,7 @@ export const Post = ({ data }: Props) => {
       )}
 
       <div className={s.postFooter}>
-        <Button type="submit" className={s.submitBtn} text="delete" onClick={() => dispatch(deletePostAC(data.id))}/>
+        <Button type="submit" text="delete" onClick={() => dispatch(deletePostAC(data.id))}/>
         <button className={s.actionButton} onClick={() => dispatch(likePostAC(data.id))}><span className={s.actionIcon}>❤️</span>{data.likesCount}</button>
         <button className={s.actionButton}><span className={s.actionIcon}>💬</span> 0</button>
         <button className={s.actionButton}><span className={s.actionIcon}>🔄</span> 0</button>
@@ -43,3 +42,6 @@ export const Post = ({ data }: Props) => {
     </article>
   );
 };
+
+
+// className={s.submitBtn}

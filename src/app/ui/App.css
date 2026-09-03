@@ -20,6 +20,8 @@
 }
 
 body {
+  height: 100vh;
+  overflow: auto;
   background-color: var(--bg-main);
   color: var(--text-primary);
   font-family: var(--font-main);
@@ -29,21 +31,26 @@ body {
 
 .app-wrapper {
   width: 100%;
-  min-height: 100vh;
+  height: 100vh; 
   margin: 0 auto;
   display: grid;
   grid-template-areas:
     "h h"
     "n c";
-  grid-template-rows: 100px 1fr;
+  grid-template-rows: 100px 1fr; 
   grid-template-columns: 350px 10fr;
+  overflow: hidden; 
 }
 
 .app-wrapper-content {
+  height: 100%; 
+  overflow: auto;
+  display: flex; 
+  flex: 1;
   grid-area: c;
   background-color: #09090e;
   border: 1px solid var(--border-color); 
-  min-height: 100vh;
+  min-width: 0; /* allow content to shrink inside grid/flex layout to prevent horizontal overflow */
 }
 
 /* Кнопки (Create Post, Follow) */
